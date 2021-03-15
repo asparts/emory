@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         loadImages();
 
         //Shuffle images
-        Collections.shuffle(Arrays.asList(cardArray));
+        //Collections.shuffle(Arrays.asList(cardArray));
 
         card00.setOnClickListener(new View.OnClickListener(){
 
@@ -242,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
             clickedFirst = card;
             cardNumber = 2;
         }else if(cardNumber == 2){
+            secondCard = cardArray[card];
             clickedSecond = card;
             cardNumber = 1;
 
@@ -279,12 +281,15 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: TRANSFORM CARDS TO ARRAYS IN ORDER TO DO COMPARISON WITH LOOPS, MUCH MORE EASIER AND BETTER FOR PERFORMANCE ETC..
 
+        Log.d("joo", firstCard + "+" + secondCard);
+
         //If images are equal, remove them from game.
         if(firstCard % 2 == 0) {
             if (firstCard +1 == secondCard){
 
                 if(clickedFirst == 100){
                     card00.setVisibility(View.INVISIBLE);
+                    Log.d("joo2", "diggoo");
                 }else if(clickedFirst == 101){
                     card01.setVisibility(View.INVISIBLE);
                 }else if(clickedFirst == 102){
@@ -339,7 +344,23 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        }else if(firstCard % 2 == 1){
+        }else{
+            card00.setImageResource(R.drawable.card);
+            card01.setImageResource(R.drawable.card);
+            card02.setImageResource(R.drawable.card);
+            card03.setImageResource(R.drawable.card);
+
+            card10.setImageResource(R.drawable.card);
+            card11.setImageResource(R.drawable.card);
+            card12.setImageResource(R.drawable.card);
+            card13.setImageResource(R.drawable.card);
+
+            card20.setImageResource(R.drawable.card);
+            card21.setImageResource(R.drawable.card);
+            card22.setImageResource(R.drawable.card);
+            card23.setImageResource(R.drawable.card);
+        }
+        if(firstCard % 2 == 1){
             if(firstCard -1 == secondCard){
                 if(clickedFirst == 100){
                     card00.setVisibility(View.INVISIBLE);
