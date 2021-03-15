@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="3"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -20,9 +21,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card01"
@@ -30,9 +30,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card02"
@@ -40,9 +39,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card03"
@@ -50,9 +48,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
     </LinearLayout>
 
@@ -69,9 +66,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card11"
@@ -79,9 +75,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card12"
@@ -89,9 +84,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card13"
@@ -99,9 +93,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
     </LinearLayout>
 
@@ -118,9 +111,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card21"
@@ -128,9 +120,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card22"
@@ -138,9 +129,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
         <ImageView
             android:id="@+id/card23"
@@ -148,9 +138,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/card">
+            android:src="@drawable/card"/>
 
-        </ImageView>
 
     </LinearLayout>
 

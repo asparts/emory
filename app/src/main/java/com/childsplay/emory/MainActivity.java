@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         loadImages();
 
         //Shuffle images
-        //Collections.shuffle(Arrays.asList(cardArray));
+        Collections.shuffle(Arrays.asList(cardArray));
 
         card00.setOnClickListener(new View.OnClickListener(){
 
@@ -287,151 +287,151 @@ public class MainActivity extends AppCompatActivity {
         if(firstCard % 2 == 0) {
             if (firstCard +1 == secondCard){
 
-                if(clickedFirst == 100){
+                if(clickedFirst == 0){
                     card00.setVisibility(View.INVISIBLE);
                     Log.d("joo2", "diggoo");
-                }else if(clickedFirst == 101){
+                }else if(clickedFirst == 1){
                     card01.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 102){
+                }else if(clickedFirst == 2){
                     card02.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 103){
+                }else if(clickedFirst == 3){
                     card03.setVisibility(View.INVISIBLE);
 
-                }else if(clickedFirst == 200){
+                }else if(clickedFirst == 4){
                     card10.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 201){
+                }else if(clickedFirst == 5){
                     card11.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 202){
+                }else if(clickedFirst == 6){
                     card12.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 203){
+                }else if(clickedFirst == 7){
                     card13.setVisibility(View.INVISIBLE);
 
-                }else if(clickedFirst == 300){
+                }else if(clickedFirst == 8){
                     card20.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 301){
+                }else if(clickedFirst == 9){
                     card21.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 302){
+                }else if(clickedFirst == 10){
                     card22.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 303){
+                }else if(clickedFirst == 11){
                     card23.setVisibility(View.INVISIBLE);
                 }
-                if(clickedSecond == 100){
+                if(clickedSecond == 0){
                     card00.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 101){
+                }else if(clickedSecond == 1){
                     card01.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 102){
+                }else if(clickedSecond == 2){
                     card02.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 103){
+                }else if(clickedSecond == 3){
                     card03.setVisibility(View.INVISIBLE);
 
-                }else if(clickedSecond == 200){
+                }else if(clickedSecond == 4){
                     card10.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 201){
+                }else if(clickedSecond == 5){
                     card11.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 202){
+                }else if(clickedSecond == 6){
                     card12.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 203){
+                }else if(clickedSecond == 7){
                     card13.setVisibility(View.INVISIBLE);
 
-                }else if(clickedSecond == 300){
+                }else if(clickedSecond == 8){
                     card20.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 301){
+                }else if(clickedSecond == 9){
                     card21.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 302){
+                }else if(clickedSecond == 10){
                     card22.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 303){
+                }else if(clickedSecond == 11){
                     card23.setVisibility(View.INVISIBLE);
                 }
 
-            }
-        }else{
-            card00.setImageResource(R.drawable.card);
-            card01.setImageResource(R.drawable.card);
-            card02.setImageResource(R.drawable.card);
-            card03.setImageResource(R.drawable.card);
+            }else{
+                card00.setImageResource(R.drawable.card);
+                card01.setImageResource(R.drawable.card);
+                card02.setImageResource(R.drawable.card);
+                card03.setImageResource(R.drawable.card);
 
-            card10.setImageResource(R.drawable.card);
-            card11.setImageResource(R.drawable.card);
-            card12.setImageResource(R.drawable.card);
-            card13.setImageResource(R.drawable.card);
+                card10.setImageResource(R.drawable.card);
+                card11.setImageResource(R.drawable.card);
+                card12.setImageResource(R.drawable.card);
+                card13.setImageResource(R.drawable.card);
 
-            card20.setImageResource(R.drawable.card);
-            card21.setImageResource(R.drawable.card);
-            card22.setImageResource(R.drawable.card);
-            card23.setImageResource(R.drawable.card);
+                card20.setImageResource(R.drawable.card);
+                card21.setImageResource(R.drawable.card);
+                card22.setImageResource(R.drawable.card);
+                card23.setImageResource(R.drawable.card);
+        }
         }
         if(firstCard % 2 == 1){
             if(firstCard -1 == secondCard){
-                if(clickedFirst == 100){
+                if(clickedFirst == 0){
                     card00.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 101){
+                }else if(clickedFirst == 1){
                     card01.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 102){
+                }else if(clickedFirst == 2){
                     card02.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 103){
+                }else if(clickedFirst == 3){
                     card03.setVisibility(View.INVISIBLE);
 
-                }else if(clickedFirst == 200){
+                }else if(clickedFirst == 4){
                     card10.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 201){
+                }else if(clickedFirst == 5){
                     card11.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 202){
+                }else if(clickedFirst == 6){
                     card12.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 203){
+                }else if(clickedFirst == 7){
                     card13.setVisibility(View.INVISIBLE);
 
-                }else if(clickedFirst == 300){
+                }else if(clickedFirst == 8){
                     card20.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 301){
+                }else if(clickedFirst == 9){
                     card21.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 302){
+                }else if(clickedFirst == 10){
                     card22.setVisibility(View.INVISIBLE);
-                }else if(clickedFirst == 303){
+                }else if(clickedFirst == 11){
                     card23.setVisibility(View.INVISIBLE);
                 }
-                if(clickedSecond == 100){
+                if(clickedSecond == 0){
                     card00.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 101){
+                }else if(clickedSecond == 1){
                     card01.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 102){
+                }else if(clickedSecond == 2){
                     card02.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 103){
+                }else if(clickedSecond == 3){
                     card03.setVisibility(View.INVISIBLE);
 
-                }else if(clickedSecond == 200){
+                }else if(clickedSecond == 4){
                     card10.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 201){
+                }else if(clickedSecond == 5){
                     card11.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 202){
+                }else if(clickedSecond == 6){
                     card12.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 203){
+                }else if(clickedSecond == 7){
                     card13.setVisibility(View.INVISIBLE);
 
-                }else if(clickedSecond == 300){
+                }else if(clickedSecond == 8){
                     card20.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 301){
+                }else if(clickedSecond == 9){
                     card21.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 302){
+                }else if(clickedSecond == 10){
                     card22.setVisibility(View.INVISIBLE);
-                }else if(clickedSecond == 303){
+                }else if(clickedSecond == 11){
                     card23.setVisibility(View.INVISIBLE);
                 }
-            }
-        }else{
-            card00.setImageResource(R.drawable.card);
-            card01.setImageResource(R.drawable.card);
-            card02.setImageResource(R.drawable.card);
-            card03.setImageResource(R.drawable.card);
+            }else{
+                card00.setImageResource(R.drawable.card);
+                card01.setImageResource(R.drawable.card);
+                card02.setImageResource(R.drawable.card);
+                card03.setImageResource(R.drawable.card);
 
-            card10.setImageResource(R.drawable.card);
-            card11.setImageResource(R.drawable.card);
-            card12.setImageResource(R.drawable.card);
-            card13.setImageResource(R.drawable.card);
+                card10.setImageResource(R.drawable.card);
+                card11.setImageResource(R.drawable.card);
+                card12.setImageResource(R.drawable.card);
+                card13.setImageResource(R.drawable.card);
 
-            card20.setImageResource(R.drawable.card);
-            card21.setImageResource(R.drawable.card);
-            card22.setImageResource(R.drawable.card);
-            card23.setImageResource(R.drawable.card);
+                card20.setImageResource(R.drawable.card);
+                card21.setImageResource(R.drawable.card);
+                card22.setImageResource(R.drawable.card);
+                card23.setImageResource(R.drawable.card);
+        }
         }
 
         card00.setEnabled(true);
