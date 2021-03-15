@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void calculate(){
 
-        //TODO: TRANSFORM CARDS TO ARRAYS IN ORDER TO DO COMPARISON WITH LOOPS, MUCH MORE EASIER AND BETTER FOR PERFORMANCE ETC..
+        //TODO: TRANSFORM CARDS TO ARRAYS IN ORDER TO DO COMPARISON WITH LOOPS, MUCH MORE EASIER AND BETTER FOR PERFORMANCE ETC...
 
         Log.d("joo", firstCard + "+" + secondCard);
 
