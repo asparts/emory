@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //GETTING INFORMATION ABOUT CATEGORY FROM MENU INTENT/ACTIVITY
+        //TODO: pass string to loadimages function and get some more images there.. loadimages is called in the end of this method
+        String category = getIntent().getStringExtra("Category");
 
         card00 = (ImageView) findViewById(R.id.card00);
         card01 = (ImageView) findViewById(R.id.card01);
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         card22.setTag("10");
         card23.setTag("11");
 
-        loadImages();
+        loadImages(category);
 
         //Shuffle images
         Collections.shuffle(Arrays.asList(cardArray));
@@ -358,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
                 card21.setImageResource(R.drawable.card);
                 card22.setImageResource(R.drawable.card);
                 card23.setImageResource(R.drawable.card);
-        }
+            }
         }
         if(firstCard % 2 == 1){
             if(firstCard -1 == secondCard){
@@ -431,7 +437,7 @@ public class MainActivity extends AppCompatActivity {
                 card21.setImageResource(R.drawable.card);
                 card22.setImageResource(R.drawable.card);
                 card23.setImageResource(R.drawable.card);
-        }
+            }
         }
 
         card00.setEnabled(true);
@@ -484,6 +490,13 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     finish();
                 }
+            }).setNeutralButton("MAIN MENU", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(getApplicationContext(), UserInterFaceActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             });
 
             AlertDialog alertDialog = alertDialogBuilder.create();
@@ -493,26 +506,67 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void loadImages(){
+    private void loadImages(String category){
 
-        //Images from Kenney.nl
+        // Animal images from Kenney.nl
 
-        img00 = R.drawable.chicken00;
-        img01 = R.drawable.chicken;
-        img02 = R.drawable.cow02;
-        img03 = R.drawable.cow;
+        if(category.equalsIgnoreCase("animals")) {
 
-        img10 = R.drawable.crocodile10;
-        img11 = R.drawable.crocodile;
-        img12 = R.drawable.elephant12;
-        img13 = R.drawable.elephant;
+            img00 = R.drawable.chicken00;
+            img01 = R.drawable.chicken;
+            img02 = R.drawable.cow02;
+            img03 = R.drawable.cow;
+
+            img10 = R.drawable.crocodile10;
+            img11 = R.drawable.crocodile;
+            img12 = R.drawable.elephant12;
+            img13 = R.drawable.elephant;
 
 
-        img20 = R.drawable.monkey20;
-        img21 = R.drawable.monkey;
-        img22 = R.drawable.pig22;
-        img23 = R.drawable.pig;
+            img20 = R.drawable.monkey20;
+            img21 = R.drawable.monkey;
+            img22 = R.drawable.pig22;
+            img23 = R.drawable.pig;
+        }
+        if(category.equalsIgnoreCase("vehicles")) {
 
+            img00 = R.drawable.chicken00;
+            img01 = R.drawable.chicken;
+            img02 = R.drawable.cow02;
+            img03 = R.drawable.cow;
+
+            img10 = R.drawable.crocodile10;
+            img11 = R.drawable.crocodile;
+            img12 = R.drawable.elephant12;
+            img13 = R.drawable.elephant;
+
+
+            img20 = R.drawable.monkey20;
+            img21 = R.drawable.monkey;
+            img22 = R.drawable.pig22;
+            img23 = R.drawable.pig;
+        }
+
+    }
+
+    // create an action bar button
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // R.menu.mymenu is a reference to an xml file named mymenu.xml which should be inside your res/menu directory.
+        // If you don't have res/menu, just create a directory named "menu" inside res
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.settingsIconButton) {
+            // do something here
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
