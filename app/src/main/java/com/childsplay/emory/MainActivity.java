@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,10 +36,49 @@ public class MainActivity extends AppCompatActivity {
     int clickedFirst, clickedSecond;
     int cardNumber = 1;
 
+    //timerstuff
+    SeekBar timerSeekBar;
+    TextView timerTextView;
+    CountDownTimer countDownTimer;
+    MediaPlayer mediaPlayer; //Doing alarm for timer
+    boolean counterIsActive = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Timerstuff
+
+        timerSeekBar = findViewById(R.id.timerSeekBar);
+        timerTextView = findViewById(R.id.timerTextView);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.menuclick);
+
+        timerSeekBar.setMax(120);
+        timerSeekBar.setProgress(120);
+        timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+
+                updateSeekBarProgress(progress);
+
+            }
+
+
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        //Timerstuff ends
+
 
         //GETTING INFORMATION ABOUT CATEGORY FROM MENU INTENT/ACTIVITY
         //TODO: pass string to loadimages function and get some more images there.. loadimages is called in the end of this method
@@ -513,6 +556,7 @@ public class MainActivity extends AppCompatActivity {
         if(category.equalsIgnoreCase("animals")) {
 
             img00 = R.drawable.chicken00;
+
             img01 = R.drawable.chicken;
             img02 = R.drawable.cow02;
             img03 = R.drawable.cow;
@@ -530,22 +574,24 @@ public class MainActivity extends AppCompatActivity {
         }
         if(category.equalsIgnoreCase("vehicles")) {
 
-            img00 = R.drawable.chicken00;
-            img01 = R.drawable.chicken;
-            img02 = R.drawable.cow02;
-            img03 = R.drawable.cow;
+            img00 = R.drawable.cistern_w;
+            img01 = R.drawable.cistern;
+            img02 = R.drawable.firetruck_w;
+            img03 = R.drawable.firetruck;
 
-            img10 = R.drawable.crocodile10;
-            img11 = R.drawable.crocodile;
-            img12 = R.drawable.elephant12;
-            img13 = R.drawable.elephant;
+            img10 = R.drawable.motorcycle_w;
+            img11 = R.drawable.motorcycle;
+            img12 = R.drawable.airplane_w;
+            img13 = R.drawable.plane;
 
 
-            img20 = R.drawable.monkey20;
-            img21 = R.drawable.monkey;
-            img22 = R.drawable.pig22;
-            img23 = R.drawable.pig;
+            img20 = R.drawable.racing_car_w;
+            img21 = R.drawable.racing_car;
+            img22 = R.drawable.regular_car_w;
+            img23 = R.drawable.regular_car;
         }
+
+        startTimer(); //TODO: WHAT THE FUCK IS WRONG WITH THIS?? WHAT VIEW I NEED TO PASS AND IS IT NECESSARRY
 
     }
 
@@ -569,4 +615,52 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void updateSeekBarProgress(int progress){
+
+        int minutes = progress / 60;
+        int seconds = progress / 60;
+        String secondsFinal = "";
+        if(seconds <= 9){
+            secondsFinal = "0" + seconds;
+        }else{
+            secondsFinal = "" + seconds;
+        }
+        timerSeekBar.setProgress(progress);
+        timerTextView.setText("" + minutes + ":" + secondsFinal); //TODO: timertextview is not working
+
+    }
+    public void startTimer(){
+
+        if(counterIsActive == false){
+            counterIsActive = true;
+            timerSeekBar.setEnabled(false);
+            countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+
+                    updateSeekBarProgress((int) millisUntilFinished / 1000);
+
+                }
+
+                @Override
+                public void onFinish() {
+
+                    resetTimer();
+                    if(mediaPlayer != null){
+                        mediaPlayer.start();
+                    }
+
+                }
+            }.start();
+        }else{
+            resetTimer();
+        }
+
+    }
+    private void resetTimer(){
+        timerTextView.setText("2:00");
+        timerSeekBar.setProgress(120);
+        countDownTimer.cancel();
+        timerSeekBar.setEnabled(true);
+    }
 }
