@@ -36,49 +36,12 @@ public class MainActivity extends AppCompatActivity {
     int clickedFirst, clickedSecond;
     int cardNumber = 1;
 
-    //timerstuff
-    SeekBar timerSeekBar;
-    TextView timerTextView;
-    CountDownTimer countDownTimer;
-    MediaPlayer mediaPlayer; //Doing alarm for timer
-    boolean counterIsActive = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Timerstuff
-
-        timerSeekBar = findViewById(R.id.timerSeekBar);
-        timerTextView = findViewById(R.id.timerTextView);
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.menuclick);
-
-        timerSeekBar.setMax(120);
-        timerSeekBar.setProgress(120);
-        timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-
-                updateSeekBarProgress(progress);
-
-            }
-
-
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        //Timerstuff ends
-
 
         //GETTING INFORMATION ABOUT CATEGORY FROM MENU INTENT/ACTIVITY
         //TODO: pass string to loadimages function and get some more images there.. loadimages is called in the end of this method
@@ -591,7 +554,7 @@ public class MainActivity extends AppCompatActivity {
             img23 = R.drawable.regular_car;
         }
 
-        startTimer(); //TODO: WHAT THE FUCK IS WRONG WITH THIS?? WHAT VIEW I NEED TO PASS AND IS IT NECESSARRY
+
 
     }
 
@@ -615,52 +578,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void updateSeekBarProgress(int progress){
-
-        int minutes = progress / 60;
-        int seconds = progress / 60;
-        String secondsFinal = "";
-        if(seconds <= 9){
-            secondsFinal = "0" + seconds;
-        }else{
-            secondsFinal = "" + seconds;
-        }
-        timerSeekBar.setProgress(progress);
-        timerTextView.setText("" + minutes + ":" + secondsFinal); //TODO: timertextview is not working
-
-    }
-    public void startTimer(){
-
-        if(counterIsActive == false){
-            counterIsActive = true;
-            timerSeekBar.setEnabled(false);
-            countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000, 1000) {
-                @Override
-                public void onTick(long millisUntilFinished) {
-
-                    updateSeekBarProgress((int) millisUntilFinished / 1000);
-
-                }
-
-                @Override
-                public void onFinish() {
-
-                    resetTimer();
-                    if(mediaPlayer != null){
-                        mediaPlayer.start();
-                    }
-
-                }
-            }.start();
-        }else{
-            resetTimer();
-        }
-
-    }
-    private void resetTimer(){
-        timerTextView.setText("2:00");
-        timerSeekBar.setProgress(120);
-        countDownTimer.cancel();
-        timerSeekBar.setEnabled(true);
-    }
 }

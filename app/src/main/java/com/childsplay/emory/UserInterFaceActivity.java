@@ -13,7 +13,6 @@ public class UserInterFaceActivity extends AppCompatActivity {
     Button settingsButton;
     Button quitButton;
     Button settingsIconButton;
-    Button creditsButton;
 
 
 
@@ -29,7 +28,6 @@ public class UserInterFaceActivity extends AppCompatActivity {
          settingsButton = findViewById(R.id.settingsButton);
          quitButton = findViewById(R.id.quitButton);
          settingsIconButton = findViewById(R.id.settingsIconButton);
-         creditsButton = findViewById(R.id.creditsButton);
 
 
         setActionListeners();
@@ -59,14 +57,7 @@ public class UserInterFaceActivity extends AppCompatActivity {
             }
         });
 
-        creditsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), CreditsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
