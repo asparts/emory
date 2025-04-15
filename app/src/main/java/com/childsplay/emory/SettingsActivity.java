@@ -35,8 +35,6 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //TODO: Figure out if the boolean value actually stays when leaving this activity.. Is it created again on every fucking time??
-
                 if(soundOn == true){
                     soundOn = false;
                     soundButton.setImageResource(R.drawable.ic_volume_off);
