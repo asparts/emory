@@ -7,10 +7,6 @@ Emory is an engaging memory game designed for children, developed for Android de
 - **Child-Friendly Interface**: Simple and intuitive design tailored for young users.
 - **Colorful Graphics**: Vibrant visuals to keep children engaged.
 
-## Screenshots
-
-Include screenshots of the game here to showcase the interface and gameplay. 
-
 ## Installation
 
 ### Prerequisites
