@@ -28,14 +28,14 @@ Select File > Open and navigate to the cloned emory directory.
 
 Click on the Run button or press Shift + F10 to build and launch the app on your connected device or emulator.
 
-emory/
-├── app/                 # Main application source code
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/    # Java source files
-│   │   │   └── res/     # Resource files (layouts, drawables, etc.)
-├── build.gradle         # Project-level Gradle configuration
-├── gradle/              # Gradle wrapper files
-├── gradlew              # Unix shell script to run Gradle
-├── gradlew.bat          # Windows batch file to run Gradle
-└── settings.gradle      # Settings for Gradle project
+emory/ <br>
+├── app/                 # Main application source code <br>
+│   ├── src/ <br>
+│   │   ├── main/ <br>
+│   │   │   ├── java/    # Java source files <br>
+│   │   │   └── res/     # Resource files (layouts, drawables, etc.) <br>
+├── build.gradle         # Project-level Gradle configuration <br>
+├── gradle/              # Gradle wrapper files <br>
+├── gradlew              # Unix shell script to run Gradle <br>
+├── gradlew.bat          # Windows batch file to run Gradle <br>
+└── settings.gradle      # Settings for Gradle project <br>
